@@ -8,10 +8,7 @@ const product = new ProductDetails(productId, dataSource);
 
 // const showProduct = product.init();
 
-
-
 // add listener to Add to Cart button
 // window.onload=function(){
-
 
 // }
