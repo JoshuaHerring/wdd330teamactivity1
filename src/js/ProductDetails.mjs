@@ -2,6 +2,7 @@ import ProductData from './ProductData.mjs';
 import { setLocalStorage, getParam } from "./utils.mjs";
 
 
+
 export class ProductDetails {
     constructor(productId, dataSource) {
         this.productId = productId;
@@ -11,12 +12,25 @@ export class ProductDetails {
     }
 
     async init(){
+        console.log(this.dataSource);
         const product = await this.dataSource.findProductById(this.productId);
         this.product = product;
         // console.log(product)
         const element = document.querySelector(".product-detail");
         element.innerHTML = this.renderProductDetails();
+
+        document
+            .getElementById("addToCart")
+            .addEventListener("click", this.addToCartHandler.bind(this));
+
     }
+
+   // add to cart button event handler
+    async addToCartHandler(e) {
+    console.log(this.dataSource);
+    const product = await this.dataSource.findProductById(e.target.dataset.id);
+    this.addProductToCart(product);
+  }
 
     async addProductToCart(product) {
         product = await product;
@@ -43,8 +57,10 @@ export class ProductDetails {
         ${this.product.DescriptionHtmlSimple}
         </p>
         <div class="product-detail__add">
-        <button> Add To Cart </button>
+        <button data-id="${this.product.Id}" id="addToCart"> Add To Cart </button>
         </div>`
+
+        
     }
     
     makeButton(){
