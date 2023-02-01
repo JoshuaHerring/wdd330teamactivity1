@@ -12,7 +12,7 @@ export class ProductDetails {
     }
 
     async init(){
-        console.log(this.dataSource);
+        // console.log(this.dataSource);
         const product = await this.dataSource.findProductById(this.productId);
         this.product = product;
         // console.log(product)
