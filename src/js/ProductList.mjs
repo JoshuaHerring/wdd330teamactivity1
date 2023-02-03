@@ -12,11 +12,11 @@ export default class ProductList {
 
     async init() {
       const list = await this.dataSource.getData();
-        console.log(list);
+        // console.log(list);
         var htmlString = " ";
         list.forEach(async element => {
           htmlString += await this.productCardTemplate(element);
-          console.log(htmlString);
+          // console.log(htmlString);
           this.listElement.innerHTML += htmlString;
         });
         // console.log(this);
