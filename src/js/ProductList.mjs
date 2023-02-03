@@ -13,10 +13,13 @@ export default class ProductList {
     async init() {
       const list = await this.dataSource.getData();
         console.log(list);
+        var htmlString = " ";
         list.forEach(async element => {
-          this.listElement.innerHTML = await this.productCardTemplate(element);
+          htmlString += await this.productCardTemplate(element);
+          console.log(htmlString);
+          this.listElement.innerHTML += htmlString;
         });
-        console.log(this);
+        // console.log(this);
         // this.productCardTemplate(list);
     }
 
