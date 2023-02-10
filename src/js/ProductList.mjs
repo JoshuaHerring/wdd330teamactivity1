@@ -11,7 +11,7 @@ export default class ProductList {
     }
 
     async init() {
-      let list = await this.dataSource.getData();
+      let list = await this.dataSource.getData(this.category);
       console.log(list);
       list = this.remTent(list);
       console.log(list);
