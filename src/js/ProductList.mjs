@@ -12,9 +12,7 @@ export default class ProductList {
 
     async init() {
       let list = await this.dataSource.getData(this.category);
-      console.log(list);
-      list = this.remTent(list);
-      console.log(list);
+      // console.log(list)      
         var htmlString = " ";
         list.forEach(async element => {
           htmlString += await this.productCardTemplate(element);
@@ -25,11 +23,11 @@ export default class ProductList {
         // this.productCardTemplate(list);
     };
 
-    remTent(list){
-      return list.filter((item) => 
-      item.Id == "880RR" || item.Id == "985RF" || item.Id == "985PR" || item.Id == "344YJ"
-      );
-    }
+    // remTent(list){
+    //   return list.filter((item) => 
+    //   item.Id == "880RR" || item.Id == "985RF" || item.Id == "985PR" || item.Id == "344YJ"
+    //   );
+    // }
 
 
     getData() {
@@ -40,7 +38,7 @@ export default class ProductList {
 
     async productCardTemplate(product){
         return `<li class="product-card">
-    <a href="product_pages/index.html?product=${product.Id}">
+    <a href="/product_listing/index.html?product=${product.Id}">
     <img
       src="${product.Image}"
       alt="Image of ${product.Name}"
