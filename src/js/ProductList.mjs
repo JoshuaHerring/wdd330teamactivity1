@@ -40,6 +40,7 @@ export default class ProductList {
 
     async productCardTemplate(product){
         return `<li class="product-card">
+
     <a href="/product_listing/index.html?product=${product.Id}">
     <img
       src="${product.Images.PrimaryMedium}"

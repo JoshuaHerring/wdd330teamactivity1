@@ -19,9 +19,9 @@ export class ProductDetails {
         const element = document.querySelector(".product-detail");
         element.innerHTML = await this.renderProductDetails();
 
-        // document
-        //     .getElementById("addToCart")
-        //     .addEventListener("click", this.addToCartHandler.bind(this));
+        document
+            .getElementById("addToCart")
+            .addEventListener("click", this.addToCartHandler.bind(this));
 
     }
 
@@ -65,8 +65,7 @@ export class ProductDetails {
     
     makeButton(){
         const button = document.createElement("button");
-        button.classList.add("addToCart"); 
-        
+        button.classList.add("addToCart");   
     }
     
 }
