@@ -38,10 +38,10 @@ export class ProductDetails {
     }
 
     renderProductDetails(){
+        // finalprice has a [20% off] tag added
+        return `<h3>${this.product.Brand.Name}</h3> 
         
-        return `<h3>${this.product.Brand.Name}</h3>
-        
-        <h2 class="divider">${this.product.NameWithoutBrand}</h2>
+        <h2 class="divider">${this.product.NameWithoutBrand}</h2> 
         
         <img
         class="divider"
@@ -49,7 +49,8 @@ export class ProductDetails {
         alt="Marmot Ajax tent"
         />
         
-        <p class="product-card__price"${this.product.FinalPrice}</p>
+        <p class="product-card__price">$${this.product.FinalPrice} [20% off] </p> 
+        
         
         <p class="product__color">${this.product.Colors[0].ColorName}</p>
         
