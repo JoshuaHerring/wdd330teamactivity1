@@ -45,7 +45,7 @@ export class ProductDetails {
         
         <img
         class="divider"
-        src="${this.product.Image}"
+        src="${this.product.Images.PrimaryLarge}"
         alt="Marmot Ajax tent"
         />
         

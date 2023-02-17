@@ -42,7 +42,7 @@ export default class ProductList {
         return `<li class="product-card">
     <a href="/product_listing/index.html?product=${product.Id}">
     <img
-      src="${product.Image}"
+      src="${product.Images.PrimaryMedium}"
       alt="Image of ${product.Name}"
     />
     <h3 class="card__brand">${product.Brand.Name}</h3>
