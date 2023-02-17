@@ -4,7 +4,7 @@ export default class ProductList {
         this.dataSource = dataSource;
         this.listElement = listElement;
 
-        this.path = `../public/json/${this.category}.json`;
+        // this.path = `../public/json/${this.category}.json`;
         // this.path = `../public/json/${this.dataSource}.json`;
 
         this.init();
@@ -12,6 +12,8 @@ export default class ProductList {
 
     async init() {
       let list = await this.dataSource.getData(this.category);
+      // let product = list[0].Id;
+      // console.log(product)
       // console.log(list)      
         var htmlString = " ";
         list.forEach(async element => {
@@ -20,7 +22,7 @@ export default class ProductList {
           this.listElement.innerHTML += htmlString;
         });
         // console.log(this);
-        // this.productCardTemplate(list);
+        this.productCardTemplate(list);
     };
 
     // remTent(list){

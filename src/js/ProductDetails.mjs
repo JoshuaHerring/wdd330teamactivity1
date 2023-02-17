@@ -15,29 +15,29 @@ export class ProductDetails {
         // console.log(this.dataSource);
         const product = await this.dataSource.findProductById(this.productId);
         this.product = product;
-        // console.log(product)
+        console.log(this.product)
         const element = document.querySelector(".product-detail");
-        element.innerHTML = this.renderProductDetails();
+        element.innerHTML = await this.renderProductDetails();
 
-        document
-            .getElementById("addToCart")
-            .addEventListener("click", this.addToCartHandler.bind(this));
+        // document
+        //     .getElementById("addToCart")
+        //     .addEventListener("click", this.addToCartHandler.bind(this));
 
     }
 
-   // add to cart button event handler
+    // add to cart button event handler
     async addToCartHandler(e) {
     console.log(this.dataSource);
     const product = await this.dataSource.findProductById(e.target.dataset.id);
     this.addProductToCart(product);
-  }
+    }
 
     async addProductToCart(product) {
         product = await product;
         setLocalStorage("so-cart", this.product);
     }
 
-    renderProductDetails(){
+    async renderProductDetails(){
         
         return `<h3>${this.product.Brand.Name}</h3>
         
