@@ -111,7 +111,7 @@ button {
 }
 
 .p-list{
-  width: 100px;
+  width: 150px;
   height: auto;
 }
 
@@ -134,7 +134,7 @@ button {
 .product-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   list-style-type: none;
   padding: 0;
 }
