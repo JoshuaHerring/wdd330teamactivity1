@@ -81,7 +81,7 @@ header {
   color: var(--tertiary-color);
 }
 
-button {
+button, .button {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
@@ -214,6 +214,16 @@ button {
 
 .hide{
   display: none;
+}
+
+label, input{
+  display: block;
+}
+
+.orderGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
 }
 
 @media screen and (min-width: 500px) {

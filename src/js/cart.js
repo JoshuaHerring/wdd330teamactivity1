@@ -1,5 +1,6 @@
 import { getLocalStorage } from "./utils.mjs";
 import { loadHeaderFooter, getParam } from "../js/utils.mjs";
+import renderTotal from "./cartTotal.js";
 
 loadHeaderFooter();
 
@@ -12,17 +13,11 @@ function renderCartContents() {
   if(cartItems.length > 0){
     document.querySelector(".cart-footer").classList.remove('hide');
   }
-  document.querySelector(".cart-total").innerHTML = `Total: $${getTotal(cartItems)}`;
+  renderTotal(cartItems);
 }
 
 
-function getTotal(cartItems){
-  let total = 0;
-  cartItems.forEach(item => {
-    total += item.FinalPrice;
-  });
-  return total;
-}
+
 
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">

@@ -8,13 +8,15 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer type="module" src="../js/checkout.js"></script>
+
   </head>
 
   <body>
     <header class="divider">
       <div class="logo">
-        <img src="images/noun_Tent_2517.svg" alt="tent image for logo" />
+        <img src="/images/noun_Tent_2517.svg" alt="tent image for logo" />
 
         <a href="index.html">
           Sleep
@@ -59,6 +61,59 @@
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
+        <form>
+          <fieldset>
+            <legend>Shipping</legend>
+
+            <label for="fname">First Name</label>
+            <input id="fname" type="text" required>
+
+            <label for="lname">Last Name</label>
+            <input id="lname" type="text" required>
+
+            <label for="street">Street</label>
+            <input id="street" type="text" required>
+
+            <label for="city">City</label>
+            <input id="city" type="text" required>
+
+            <label for="state">State</label>
+            <input id="state" type="text" required>
+
+            <label for="zip">Zip</label>
+            <input id="zip" type="text" patttern="^[0-9]{5}(?:-[0-9]{4})?$" required>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment</legend>
+            <label for="creditNum">Card Number</label>
+            <input id="creditNum" type="number" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" required>
+
+            <label for="expiration">Expiration</label>
+            <input id="expiration" type="text" required placeholder="MM/YY" autocomplete="cc-exp" pattern="^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$">
+
+            <label for="secCode">Security Code</label>
+            <input id="secCode" type="number" maxlength="3" autocomplete="cc-csc" required>
+          </fieldset>
+
+          <fieldset>
+            <legend>Order Summary</legend>
+            <div class="orderGrid">
+              <div>Item Subtotal<span class="itemSubtotal"></span></div>
+              <div class="cart-total"></div>
+
+              <div>Shippinig Estimate</div>
+              <div class="shipEst"></div>
+
+              <div>Tax</div>
+              <div class="tax"></div>
+
+              <div>Order Total</div>
+              <div class="finalTotal"></div>
+            </div>
+          </fieldset>
+          <input class="button" type="submit" value="Checkout">
+        </form>
       </section>
     </main>
 
