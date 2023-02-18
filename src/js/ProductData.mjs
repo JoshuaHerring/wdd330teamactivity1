@@ -22,5 +22,3 @@ export default class ProductData {
     return data.Result;
   }
 }
-
-// this.path = `../public/json/${this.category}.json`;

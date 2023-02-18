@@ -15,12 +15,6 @@ export default class ProductList {
     await this.productCardTemplate(list);
   }
 
-  getData() {
-    return fetch(this.path)
-      .then(convertToJson)
-      .then((data) => data);
-  }
-
   async productCardTemplate(product) {
     return `<li class="product-card">
 
