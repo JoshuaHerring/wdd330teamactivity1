@@ -9,6 +9,9 @@ function renderCartContents() {
   console.log(cartItems);
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  if(cartItems.length > 0){
+    document.querySelector(".cart-footer").classList.remove('hide');
+  }
   document.querySelector(".cart-total").innerHTML = `Total: $${getTotal(cartItems)}`;
 }
 
@@ -18,12 +21,6 @@ function getTotal(cartItems){
   cartItems.forEach(item => {
     total += item.FinalPrice;
   });
-  if(total == 0){
-    document.querySelector(".cart-total").style.display = none;
-  }else {
-    document.querySelector(".cart-total").style.display = 'inline';
-
-  }
   return total;
 }
 
