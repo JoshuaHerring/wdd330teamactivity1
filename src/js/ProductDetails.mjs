@@ -6,11 +6,9 @@ export class ProductDetails {
     this.productId = productId;
     this.product = {};
     this.dataSource = dataSource;
-    this.init();
   }
 
   async init() {
-    // console.log(this.dataSource);
     const product = await this.dataSource.findProductById(this.productId);
     this.product = product;
     console.log(this.product);
@@ -26,7 +24,7 @@ export class ProductDetails {
   async addToCartHandler(e) {
     console.log(this.dataSource);
     const product = await this.dataSource.findProductById(e.target.dataset.id);
-    this.addProductToCart(product);
+    await this.addProductToCart(product);
   }
 
   async addProductToCart(product) {
