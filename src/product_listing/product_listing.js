@@ -8,7 +8,7 @@ loadHeaderFooter();
 const category = getParam("category");
 
 // first create an instance of our ProductData class.
-const dataSource = new ProductData();x
+const dataSource = new ProductData();
 
 // then get the element we want the product list to render in
 const listElement = document.querySelector(".product-list");
