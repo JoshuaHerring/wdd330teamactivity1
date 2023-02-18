@@ -18,6 +18,12 @@ function getTotal(cartItems){
   cartItems.forEach(item => {
     total += item.FinalPrice;
   });
+  if(total == 0){
+    document.querySelector(".cart-total").style.display = none;
+  }else {
+    document.querySelector(".cart-total").style.display = 'inline';
+
+  }
   return total;
 }
 
