@@ -11,11 +11,11 @@ export function getLocalStorage(key) {
 }
 // save data to local storage
 export function setLocalStorage(key, data) {
-  var currentCart = getLocalStorage(key)
-  if(!currentCart){
+  var currentCart = getLocalStorage(key);
+  if (!currentCart) {
     currentCart = [];
   }
-  currentCart.push(data)
+  currentCart.push(data);
   localStorage.setItem(key, JSON.stringify(currentCart));
 }
 
@@ -28,7 +28,7 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
-export function getParam(param){
+export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);

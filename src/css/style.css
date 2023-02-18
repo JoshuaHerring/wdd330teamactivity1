@@ -110,6 +110,15 @@ button {
   fill: gray;
 }
 
+.p-list {
+  width: 150px;
+  height: auto;
+}
+
+.p-list:hover {
+  opacity: 0.7;
+}
+
 /* End cart icon styles */
 
 .mission {
@@ -125,7 +134,7 @@ button {
 .product-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   list-style-type: none;
   padding: 0;
 }
