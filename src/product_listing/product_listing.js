@@ -15,8 +15,7 @@ const listElement = document.querySelector(".product-list");
 
 // then create an instance of our ProductList class and send it the correct information.
 const myList = new ProductList(category, dataSource, listElement);
-console.log(myList);
-myList.init();
+await myList.init();
 
 const product = getParam("product");
 let details = new ProductDetails(product, dataSource);
