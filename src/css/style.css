@@ -110,12 +110,12 @@ button {
   fill: gray;
 }
 
-.p-list{
+.p-list {
   width: 150px;
   height: auto;
 }
 
-.p-list:hover{
+.p-list:hover {
   opacity: 0.7;
 }
 
