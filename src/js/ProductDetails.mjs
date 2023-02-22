@@ -1,4 +1,4 @@
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 import { setLocalStorage, getParam } from "./utils.mjs";
 
 export class ProductDetails {
