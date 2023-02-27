@@ -23,11 +23,16 @@ export class ProductDetails {
   }
 
   // add to cart button event handler
+  // setInterval(addProductToCart, );
+
   async addToCartHandler(e) {
     console.log(this.dataSource);
     const product = await this.dataSource.findProductById(e.target.dataset.id);
     this.addProductToCart(product);
+    document.querySelector(".cart").classList.add("itemAdd");
   }
+
+  
 
   async addProductToCart(product) {
     product = await product;
@@ -62,3 +67,5 @@ export class ProductDetails {
     button.classList.add("addToCart");
   }
 }
+
+
