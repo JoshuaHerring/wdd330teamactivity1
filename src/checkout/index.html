@@ -10,7 +10,6 @@
 
     <link rel="stylesheet" href="/css/style.css" />
     <script defer type="module" src="../js/checkout.js"></script>
-
   </head>
 
   <body>
@@ -66,34 +65,59 @@
             <legend>Shipping</legend>
 
             <label for="fname">First Name</label>
-            <input id="fname" type="text" required>
+            <input id="fname" type="text" required />
 
             <label for="lname">Last Name</label>
-            <input id="lname" type="text" required>
+            <input id="lname" type="text" required />
 
             <label for="street">Street</label>
-            <input id="street" type="text" required>
+            <input id="street" type="text" required />
 
             <label for="city">City</label>
-            <input id="city" type="text" required>
+            <input id="city" type="text" required />
 
             <label for="state">State</label>
-            <input id="state" type="text" required>
+            <input id="state" type="text" required />
 
             <label for="zip">Zip</label>
-            <input id="zip" type="text" patttern="^[0-9]{5}(?:-[0-9]{4})?$" required>
+            <input
+              id="zip"
+              type="text"
+              patttern="^[0-9]{5}(?:-[0-9]{4})?$"
+              required
+            />
           </fieldset>
 
           <fieldset>
             <legend>Payment</legend>
             <label for="creditNum">Card Number</label>
-            <input id="creditNum" type="number" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" required>
+            <input
+              id="creditNum"
+              type="number"
+              pattern="[0-9\s]{13,19}"
+              autocomplete="cc-number"
+              maxlength="19"
+              required
+            />
 
             <label for="expiration">Expiration</label>
-            <input id="expiration" type="text" required placeholder="MM/YY" autocomplete="cc-exp" pattern="^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$">
+            <input
+              id="expiration"
+              type="text"
+              required
+              placeholder="MM/YY"
+              autocomplete="cc-exp"
+              pattern="^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$"
+            />
 
             <label for="secCode">Security Code</label>
-            <input id="secCode" type="number" maxlength="3" autocomplete="cc-csc" required>
+            <input
+              id="secCode"
+              type="number"
+              maxlength="3"
+              autocomplete="cc-csc"
+              required
+            />
           </fieldset>
 
           <fieldset>
@@ -112,7 +136,7 @@
               <div class="finalTotal"></div>
             </div>
           </fieldset>
-          <input class="button" type="submit" value="Checkout">
+          <input class="button" type="submit" value="Checkout" />
         </form>
       </section>
     </main>

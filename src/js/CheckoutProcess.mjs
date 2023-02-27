@@ -19,8 +19,7 @@ export default class CheckoutProcess {
     this.calculateOrdertotal();
   }
   calculateItemSummary() {
-    this.itemTotal = this.list.length ;
-    
+    this.itemTotal = this.list.length;
   }
   calculateOrdertotal() {
     this.orderTotal = getTotal(this.list);
@@ -29,8 +28,11 @@ export default class CheckoutProcess {
     // affected by the rounded total
     this.tax = getTaxTotal(this.orderTotal, this.shipping).toFixed(2);
 
-    this.fTotal= (parseFloat(this.orderTotal) + parseFloat(this.shipping) + parseFloat(this.tax)).toFixed(2);
-      
+    this.fTotal = (
+      parseFloat(this.orderTotal) +
+      parseFloat(this.shipping) +
+      parseFloat(this.tax)
+    ).toFixed(2);
 
     // display the totals.
     this.displayOrderTotals();
@@ -40,8 +42,5 @@ export default class CheckoutProcess {
     document.querySelector(".shipEst").innerHTML = `$${this.shipping}`;
     document.querySelector(".tax").innerHTML = `$${this.tax}`;
     document.querySelector(".finalTotal").innerHTML = `$${this.fTotal}`;
-
-    
   }
-  
 }
