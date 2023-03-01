@@ -11,7 +11,7 @@ export function getTotal(cartItems){
 
     // toFixed rounds the numbers sometimes to be alittle low or a little high
     // which can affect the tax number
-    return total.toFixed(2);
+    return total
 }
 
 

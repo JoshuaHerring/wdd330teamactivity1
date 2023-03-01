@@ -8,6 +8,6 @@ document.querySelector(".itemSubtotal").innerHTML = `(${cartItems.length})`;
 
 const checkout = new CheckoutProcess("so-cart");
 await checkout.init();
-// console.log(checkout)
+
 
 renderTotal(cartItems)
