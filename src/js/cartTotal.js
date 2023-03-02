@@ -1,6 +1,6 @@
 export default function renderTotal(cartItems){ 
     let cartTotal = getTotal(cartItems)
-    document.querySelector(".cart-total").innerHTML = `Total: $${cartTotal}`;
+    document.querySelector(".cart-total").innerHTML = `Pre-total: $${cartTotal.toFixed(2)}`;
 }
 
 export function getTotal(cartItems){

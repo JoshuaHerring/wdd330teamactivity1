@@ -12,7 +12,9 @@ function packageItems(items) {
       name: item.Name,
       quantity: 1,
     };
-  });
+  }
+  );
+  console.log(simplifiedItems)
   return simplifiedItems
   
 }
@@ -78,8 +80,9 @@ export default class CheckoutProcess {
     // call the checkout method in our ExternalServices module and send it our data object.
 
     const formElement = document.forms["checkout"];
-
+    console.log(formElement);
     const json = formDataToJSON(formElement);
+
     // add totals, and item details
     json.orderDate = new Date();
     json.orderTotal = this.orderTotal;
@@ -87,6 +90,7 @@ export default class CheckoutProcess {
     json.shipping = this.shipping;
     json.items = packageItems(this.list);
     console.log(json);
+
     try {
       const res = await services.checkout(json);
       console.log(res);

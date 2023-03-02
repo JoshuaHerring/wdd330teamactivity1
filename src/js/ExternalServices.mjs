@@ -1,6 +1,6 @@
 const baseURL = "https://wdd330-backend.onrender.com";
 
-function convertToJson(res) {
+export function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
@@ -21,6 +21,28 @@ export default class ExternalServices {
     const data = await convertToJson(response);
     return data.Result;
   }
-}
 
-// this.path = `../public/json/${this.category}.json`;
+//   async checkout(order) {
+//     const options = {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(order)
+//     }
+//     const orderObj = await fetch(order, options)
+//     console.log(orderObj)
+//     return orderObj;
+// }
+
+async checkout(payload) {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  };
+  return await fetch(baseURL + "/checkout", options).then(convertToJson);
+}
+}
