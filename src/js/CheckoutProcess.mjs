@@ -41,13 +41,15 @@ export default class CheckoutProcess {
     this.tax = 0;
     this.orderTotal = 0;
     this.fTotal = 0;
-    // this.init();
+    this.init();
+  
   }
   async init() {
     this.list = await getLocalStorage(this.key);
     this.calculateItemSummary();
     this.calculateOrdertotal();
-    this.checkout();
+    const element = document.getElementById('submit');
+    element.addEventListener('click', this.checkout.bind(this));
   }
   calculateItemSummary() {
     this.itemTotal = this.list.length ;
@@ -76,7 +78,7 @@ export default class CheckoutProcess {
 
   async checkout() {
     // build the data object from the calculated fields, the items in the cart, and the information entered into the form
-
+    console.log(this.list)
     // call the checkout method in our ExternalServices module and send it our data object.
 
     const formElement = document.forms["checkout"];
