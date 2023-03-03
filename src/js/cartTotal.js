@@ -1,6 +1,6 @@
 export default function renderTotal(cartItems){ 
     let cartTotal = getTotal(cartItems)
-    document.querySelector(".cart-total").innerHTML = `Total: $${cartTotal}`;
+    document.querySelector(".cart-total").innerHTML = `Pre-total: $${cartTotal.toFixed(2)}`;
 }
 
 export function getTotal(cartItems){
@@ -11,7 +11,7 @@ export function getTotal(cartItems){
 
     // toFixed rounds the numbers sometimes to be alittle low or a little high
     // which can affect the tax number
-    return total.toFixed(2);
+    return total
 }
 
 

@@ -7,7 +7,7 @@ const cartItems = await getLocalStorage("so-cart");
 document.querySelector(".itemSubtotal").innerHTML = `(${cartItems.length})`;
 
 const checkout = new CheckoutProcess("so-cart");
-await checkout.init();
-// console.log(checkout)
+// await checkout.init();
+
 
 renderTotal(cartItems)
