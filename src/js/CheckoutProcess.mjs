@@ -12,11 +12,9 @@ function packageItems(items) {
       name: item.Name,
       quantity: 1,
     };
-  }
-  );
-  console.log(simplifiedItems)
-  return simplifiedItems
-  
+  });
+  console.log(simplifiedItems);
+  return simplifiedItems;
 }
 
 const services = new ExternalServices();
@@ -42,18 +40,16 @@ export default class CheckoutProcess {
     this.orderTotal = 0;
     this.fTotal = 0;
     this.init();
-  
   }
   async init() {
     this.list = await getLocalStorage(this.key);
     this.calculateItemSummary();
     this.calculateOrdertotal();
-    const element = document.getElementById('submit');
-    element.addEventListener('click', this.checkout.bind(this));
+    const element = document.getElementById("submit");
+    element.addEventListener("click", this.checkout.bind(this));
   }
   calculateItemSummary() {
-    this.itemTotal = this.list.length ;
-    
+    this.itemTotal = this.list.length;
   }
   calculateOrdertotal() {
     this.orderTotal = getTotal(this.list);
@@ -62,8 +58,10 @@ export default class CheckoutProcess {
     // affected by the rounded total
     this.tax = getTaxTotal(this.orderTotal, this.shipping).toFixed(2);
 
-    this.fTotal= (parseFloat(this.orderTotal) + parseFloat(this.shipping) + parseFloat(this.tax));
-      
+    this.fTotal =
+      parseFloat(this.orderTotal) +
+      parseFloat(this.shipping) +
+      parseFloat(this.tax);
 
     // display the totals.
     this.displayOrderTotals();
@@ -72,13 +70,14 @@ export default class CheckoutProcess {
     // once the totals are all calculated display them in the order summary page
     document.querySelector(".shipEst").innerHTML = `$${this.shipping}`;
     document.querySelector(".tax").innerHTML = `$${this.tax}`;
-    document.querySelector(".finalTotal").innerHTML = `$${(this.fTotal).toFixed(2)}`;
-
+    document.querySelector(".finalTotal").innerHTML = `$${this.fTotal.toFixed(
+      2
+    )}`;
   }
 
   async checkout() {
     // build the data object from the calculated fields, the items in the cart, and the information entered into the form
-    console.log(this.list)
+    console.log(this.list);
     // call the checkout method in our ExternalServices module and send it our data object.
 
     const formElement = document.forms["checkout"];
@@ -100,5 +99,4 @@ export default class CheckoutProcess {
       console.log(err);
     }
   }
-
-  }
+}

@@ -22,29 +22,28 @@ export default class ExternalServices {
     return data.Result;
   }
 
-//   async checkout(order) {
-//     const options = {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(order)
-//     }
-//     const orderObj = await fetch(order, options)
-//     console.log(orderObj)
-//     return orderObj;
-// }
+  //   async checkout(order) {
+  //     const options = {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify(order)
+  //     }
+  //     const orderObj = await fetch(order, options)
+  //     console.log(orderObj)
+  //     return orderObj;
+  // }
 
-async checkout(payload) {
-  console.log(payload)
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  };
-  return await fetch(baseURL + "/checkout", options).then(convertToJson);
-
-}
+  async checkout(payload) {
+    console.log(payload);
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    };
+    return await fetch(baseURL + "/checkout", options).then(convertToJson);
+  }
 }
