@@ -46,7 +46,10 @@ export default class CheckoutProcess {
     this.calculateItemSummary();
     this.calculateOrdertotal();
     const element = document.getElementById("submit");
-    element.addEventListener("click", this.checkout.bind(this));
+    element.addEventListener("click", (e) => {
+      e.preventDefault()
+      this.checkout.bind(this)
+    });
   }
   calculateItemSummary() {
     this.itemTotal = this.list.length;
