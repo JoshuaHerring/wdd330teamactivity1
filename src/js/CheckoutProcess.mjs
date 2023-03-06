@@ -46,10 +46,9 @@ export default class CheckoutProcess {
     this.calculateItemSummary();
     this.calculateOrdertotal();
     const element = document.getElementById("submit");
-    element.addEventListener("click", (e) => {
-      e.preventDefault()
+    element.addEventListener("click", 
       this.checkout.bind(this)
-    });
+  );
   }
   calculateItemSummary() {
     this.itemTotal = this.list.length;
@@ -98,8 +97,13 @@ export default class CheckoutProcess {
     try {
       const res = await services.checkout(json);
       console.log(res);
+      if(res){
+        location.reload(alert("Your order has been placed."))
+      }
     } catch (err) {
       console.log(err);
     }
+
+
   }
 }
