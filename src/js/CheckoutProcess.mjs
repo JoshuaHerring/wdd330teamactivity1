@@ -98,7 +98,10 @@ export default class CheckoutProcess {
       const res = await services.checkout(json);
       console.log(res);
       if(res){
-        location.reload(alert("Your order has been placed."))
+        location.reload(
+          alert("Your order has been placed."),
+          )
+          localStorage.clear
       }
     } catch (err) {
       console.log(err);
