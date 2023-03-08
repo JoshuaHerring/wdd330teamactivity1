@@ -104,6 +104,19 @@ button,
   position: relative;
   text-align: center;
 }
+.itemAdd {
+  animation: scale 0.3s ease-in-out alternate;
+  /* transform: scale(4); */
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
 
 .cart svg {
   width: 25px;

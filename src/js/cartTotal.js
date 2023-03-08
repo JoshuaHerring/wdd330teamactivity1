@@ -11,9 +11,9 @@ export function getTotal(cartItems) {
     total += item.FinalPrice;
   });
 
-  // toFixed rounds the numbers sometimes to be alittle low or a little high
-  // which can affect the tax number
-  return total;
+    // toFixed rounds the numbers sometimes to be alittle low or a little high
+    // which can affect the tax number
+    return total.toFixed(2);
 }
 
 export function getTaxTotal(cartTotal, shippingCost) {

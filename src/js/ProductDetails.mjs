@@ -13,7 +13,6 @@ export class ProductDetails {
     // console.log(this.dataSource);
     const product = await this.dataSource.findProductById(this.productId);
     this.product = product;
-    console.log(this.product);
     const element = document.querySelector(".product-detail");
     element.innerHTML = await this.renderProductDetails();
 
@@ -23,10 +22,16 @@ export class ProductDetails {
   }
 
   // add to cart button event handler
+
   async addToCartHandler(e) {
-    console.log(this.dataSource);
     const product = await this.dataSource.findProductById(e.target.dataset.id);
     this.addProductToCart(product);
+    document.querySelector(".cart").classList.add("itemAdd");
+
+    setInterval(() => {
+      document.querySelector(".cart").classList.remove("itemAdd");
+      this.addToCartHandler;
+    }, 1000);
   }
 
   async addProductToCart(product) {
