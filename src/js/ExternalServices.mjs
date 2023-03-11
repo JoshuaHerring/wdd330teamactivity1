@@ -4,12 +4,16 @@ export function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw { name: 'servicesError', message: jsonResponse };
+    throw { name: 'servicesError', message: res };
   }
 }
 
+
+
 export default class ExternalServices {
-  constructor() {}
+  constructor() {
+
+  }
 
   async getData(category) {
     const response = await fetch(baseURL + `/products/search/${category}`);
@@ -21,6 +25,25 @@ export default class ExternalServices {
     const data = await convertToJson(response);
     return data.Result;
   }
+
+  async loginRequest(creds){
+    console.log('first')
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(creds),
+    };
+    // return await fetch(baseURL + "/admin", options).then(convertToJson);
+    const response = await fetch(baseURL + "/login", options).then(convertToJson);
+    console.log('second')
+    // console.log('response')
+    return response.accessToken;
+}
+
+
+
 
   //   async checkout(order) {
   //     const options = {
@@ -46,4 +69,21 @@ export default class ExternalServices {
     };
     return await fetch(baseURL + "/checkout", options).then(convertToJson);
   }
+  
+  async getOrders(token) {
+    const options = {
+        method: "GET",
+        // the server will reject our request if we don't include the Authorization header with a valid token!
+        headers: {
+        Authorization: `Bearer ${token}`,
+        },
+    };
+    const response = await fetch(baseURL + "/orders", options).then(
+        convertToJson
+    );
+    return response;
 }
+
+  
+}
+
