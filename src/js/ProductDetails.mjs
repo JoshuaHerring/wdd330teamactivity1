@@ -34,6 +34,10 @@ export class ProductDetails {
     }, 1000);
   }
 
+  renderSuperscript(productList){
+    document.getElementById('total').innerHTML = productList.length
+  }
+
   async addProductToCart(product) {
     product = await product;
     setLocalStorage("so-cart", this.product);
