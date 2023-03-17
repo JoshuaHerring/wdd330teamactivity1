@@ -1,32 +1,59 @@
 import ProductData from "./ProductData.mjs";
-import { setLocalStorage, getParam } from "./utils.mjs";
+import { setLocalStorage, getParam, getLocalStorage } from "./utils.mjs";
 
 export class ProductDetails {
   constructor(productId, dataSource) {
     this.productId = productId;
     this.product = {};
+    
     this.dataSource = dataSource;
     this.init();
   }
 
   async init() {
-    // console.log(this.dataSource);
     const product = await this.dataSource.findProductById(this.productId);
+    console.log(this.dataSource)
     this.product = product;
-    console.log(this.product);
+    this.product["Quantity"] = 0;
+    console.log(this.product)
     const element = document.querySelector(".product-detail");
     element.innerHTML = await this.renderProductDetails();
 
     document
       .getElementById("addToCart")
       .addEventListener("click", this.addToCartHandler.bind(this));
+  
+
   }
 
   // add to cart button event handler
   async addToCartHandler(e) {
-    console.log(this.dataSource);
     const product = await this.dataSource.findProductById(e.target.dataset.id);
-    this.addProductToCart(product);
+    let this_id = product.Id;
+    let cart = getLocalStorage("so-cart");
+    console.log(this.product);
+    
+    if(cart == null){
+      this.addProductToCart(product);
+      this.product.Quantity++;
+      console.log(cart)
+    } else{
+      for(let i = 0; i < cart.length; i++){
+        if(cart[i].Id == this_id){
+            cart[i].Quantity++;
+          } else{
+            this.addProductToCart(product);
+        }
+      }
+
+    }
+
+
+    // if(this.product.Quantity <= 1){
+    //   this.product.Quantity++;
+    // }else if(this.product.Quantity > 1){
+    //   this.product.Quantity++;
+    // }
   }
 
   async addProductToCart(product) {

@@ -20,11 +20,5 @@ myList.init();
 
 const product = getParam("product");
 let details = new ProductDetails(product, dataSource);
-console.log(details);
+console.log(details)
 
-// create an instance of product details
-// const productCards = new ProductDetails(product, dataSource);
-
-// finally call the init method to show our products
-
-// productCards.init();
