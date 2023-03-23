@@ -44,6 +44,7 @@ export class ProductDetails {
         src="${this.product.Images.PrimaryLarge}"
         alt="Marmot Ajax tent"
         />
+        <p class="prodcut-card__markup">$${this.product.SuggestedRetailPrice}</p>
         
         <p class="product-card__price">$${this.product.FinalPrice}</p>
         
