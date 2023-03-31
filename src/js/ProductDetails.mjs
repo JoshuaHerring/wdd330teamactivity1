@@ -62,4 +62,29 @@ export class ProductDetails {
     const button = document.createElement("button");
     button.classList.add("addToCart");
   }
+
+  renderCarousel(product) {
+    const images = product.Images.ExtraImages;
+    const section = document.createElement(`div`);
+
+    // First Img
+    const firstImg = document.createElement(`div`);
+    firstImg.setAttribute("class", "product-card__carousel-image");
+    firstImg.innerHTML = `
+      <img src="${product.Images.PrimaryLarge}" alt="${product.Name}" data-src="${product.Images.PrimaryExtraLarge}">
+      `;
+    section.appendChild(firstImg);
+
+    // Extra Images
+    images.forEach((item) => {
+      const imageDiv = document.createElement(`div`);
+      imageDiv.setAttribute("class", "product-card__carousel-image");
+      imageDiv.innerHTML = `
+      <img src="${item.Src}" alt="${item.Title}" data-src="${item.Src}">
+      `;
+      section.appendChild(imageDiv);
+    });
+    return section.innerHTML;
+  }
+
 }
