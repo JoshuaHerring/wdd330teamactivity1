@@ -104,6 +104,25 @@ button,
   position: relative;
   text-align: center;
 }
+
+#search_bar{
+  width: 200px;
+  margin-top: 10px;
+}
+
+#search_space{
+  height: 35px;
+  width: 100%;
+  border: 3px solid green;
+  
+}
+.srch{
+  margin: auto;
+  width: 75%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
 .itemAdd {
   animation: scale 0.3s ease-in-out alternate;
   /* transform: scale(4); */

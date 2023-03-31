@@ -4,3 +4,4 @@ import alert from "./alert.js";
 loadHeaderFooter();
 
 let notice = new alert();
+

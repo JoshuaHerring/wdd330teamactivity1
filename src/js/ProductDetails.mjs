@@ -70,4 +70,6 @@ export class ProductDetails {
     const button = document.createElement("button");
     button.classList.add("addToCart");
   }
+
+
 }

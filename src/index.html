@@ -6,6 +6,7 @@
     <title>Sleep Outside | Home</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script defer type="module" src="./js/main.js"></script>
+    <script defer src="product_listing/product_listing.js"></script>
   </head>
   <body>
     <header id="parentHeader" class="divider">
@@ -60,6 +61,17 @@
               alt="Tent Icon from Noun Project: Mustofa Bayu"
           /></a>
         </ul>
+      </section>
+      <section class="srch">
+        <h3>Search for a product</h3>
+        <form id="search_menu" role="search">
+          <input type="search" id="search_space" name="q" placeholder="Search..." aria-label="Search through site content">
+          <button id="search_bar">Search</button>
+        </form>
+      </section>
+      <section id="products">
+        <h2>Top Products</h2>
+        <ul class="product-list"></ul>
       </section>
     </main>
     <footer id="parentFooter"></footer>
