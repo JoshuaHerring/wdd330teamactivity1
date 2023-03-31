@@ -41,6 +41,15 @@ async function loadTemplate(path) {
   return template;
 }
 
+// converting to json
+export const convertToJson = async res => {
+  if (res.ok) {
+    return res.json();
+  } else {
+    throw new Error("Bad Response");
+  }
+};
+
 export function renderWithTemplate(template, parentElement) {
   parentElement.insertAdjacentHTML("afterbegin", template);
 }
