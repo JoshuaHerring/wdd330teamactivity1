@@ -46,9 +46,9 @@ console.log(details);
 // totalPrice.prepend(totalPriceElement); ``
 
 
-const dataSource = new ProductData();
-const productListElement = document.querySelector(".product-list");
-const productList = new ProductListing(category, dataSource, productListElement);
+// const dataSource = new ProductData();
+// const productListElement = document.querySelector(".product-list");
+// const productList = new ProductListing(category, dataSource, productListElement);
 
-productList.init();
+// productList.init();
 

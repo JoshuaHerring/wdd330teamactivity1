@@ -84,6 +84,7 @@ export class ProductDetails {
       `;
       section.appendChild(imageDiv);
     });
+    
     return section.innerHTML;
   }
 
