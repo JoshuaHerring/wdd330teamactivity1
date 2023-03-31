@@ -113,13 +113,13 @@ button,
 #search_space{
   height: 35px;
   width: 100%;
-  border: 3px solid green;
+  border: 3px solid rgb(87, 87, 131);
   
 }
 .srch{
   margin: auto;
   width: 75%;
-  border: 3px solid green;
+  border: 3px solid rgb(87, 87, 131);
   padding: 10px;
 }
 
