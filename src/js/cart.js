@@ -10,19 +10,19 @@ let ids = [];
 function renderCartContents() {
   
   const cartItems = getLocalStorage("so-cart");
-  // console.log(cartItems[0].Quantity);
+  console.log(cartItems[0].Quantity);
   
   
   // add all the item id's from the cart into
   // the array ids=[]
-  // for(let i = 0; i < cartItems.length; i++){
-  //   ids.push(cartItems[i].Id)
-  //   if (ids.includes(cartItems[i].Id)){
-  //     console.log(cartItems[i].Id)
+  for(let i = 0; i < cartItems.length; i++){
+    ids.push(cartItems[i].Id)
+    if (ids.includes(cartItems[i].Id)){
+      console.log(cartItems[i].Id)
 
-  //   }
+    }
     
-  // }
+  }
 
 
   // removes error for when cart is empty

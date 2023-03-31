@@ -14,6 +14,7 @@ export class ProductDetails {
     const product = await this.dataSource.findProductById(this.productId);
     console.log(this.dataSource)
     this.product = product;
+    
     this.product["Quantity"] = 0;
     console.log(this.product)
     const element = document.querySelector(".product-detail");
@@ -31,15 +32,19 @@ export class ProductDetails {
     const product = await this.dataSource.findProductById(e.target.dataset.id);
     let this_id = product.Id;
     let cart = getLocalStorage("so-cart");
-    console.log(this.product);
+    
+    let quantity = product.Quantity;
+    console.log(product);
+    console.log(quantity);
     
     if(cart == null){
       this.addProductToCart(product);
-      this.product.Quantity++;
-      console.log(cart)
+      quantity = product.Quantity++;
     } else{
+      console.log(this.product.Quantity);
       for(let i = 0; i < cart.length; i++){
         if(cart[i].Id == this_id){
+          console.log(cart[i].Quantity)
             cart[i].Quantity++;
           } else{
             this.addProductToCart(product);
