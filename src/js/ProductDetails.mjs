@@ -1,5 +1,5 @@
 import ProductData from "./ProductData.mjs";
-import { setLocalStorage, getParam } from "./utils.mjs";
+import { setLocalStorage,   updateBreadCrumbs,  getParam } from "./utils.mjs";
 
 export class ProductDetails {
   constructor(productId, dataSource) {
@@ -9,7 +9,7 @@ export class ProductDetails {
     this.init();
   }
 
-  async init() {
+  async init(breadcrumb = true) {
     // console.log(this.dataSource);
     const product = await this.dataSource.findProductById(this.productId);
     this.product = product;
@@ -17,9 +17,16 @@ export class ProductDetails {
     const element = document.querySelector(".product-detail");
     element.innerHTML = await this.renderProductDetails();
 
+    if (breadcrumb){
+      updateBreadCrumbs(
+        `
+        <a href="/product-listing">Home</a> / <a href="/product-listing/?category=${this.product.Category}">${this.product.Category}</a> / ${this.product.NameWithoutBrand}`
+      )
+
     document
       .getElementById("addToCart")
       .addEventListener("click", this.addToCartHandler.bind(this));
+    }
   }
 
   // add to cart button event handler

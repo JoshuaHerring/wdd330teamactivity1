@@ -1,3 +1,5 @@
+import { updateBreadCrumbs } from "./utils.mjs";
+
 export default class ProductList {
   constructor(category, dataSource, listElement) {
     this.category = category;
@@ -37,6 +39,12 @@ export default class ProductList {
       .then((data) => data);
   }
 
+  renderList(list) {
+    const render = list.map(this.productCardTemplate);
+    this.listElement.insertAdjacentHTML("afterbegin", render.join(""));
+    updateBreadCrumbs(`${this.category}->(${list.length} items)`);
+  }
+
   async productCardTemplate(product) {
     return `<li class="product-card">
 
@@ -51,3 +59,4 @@ export default class ProductList {
   </li>`;
   }
 }
+
