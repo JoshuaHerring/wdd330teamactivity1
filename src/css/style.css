@@ -220,3 +220,16 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.product-card__carousel {
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 1rem;
+}
+
+.product-card__carousel-image img {
+  height: 100%;
+}

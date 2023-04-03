@@ -30,6 +30,9 @@ export class ProductDetails {
     console.log(this.dataSource);
     const product = await this.dataSource.findProductById(e.target.dataset.id);
     this.addProductToCart(product);
+
+    document.querySelector(`.product-card__carousel`).innerHTML =
+    this.renderCarousel(this.product);
   }
 
     async addProductToCart(product) {
@@ -49,6 +52,9 @@ export class ProductDetails {
         alt="Marmot Ajax tent"
         />
         
+        <div class="divider product-card__carousel">
+        </div>
+
         <p class="product-card__price"${this.product.FinalPrice}</p>
         
         <p class="product__color">${this.product.Colors[0].ColorName}</p>
@@ -62,6 +68,10 @@ export class ProductDetails {
 
         
     }
+
+    renderCarousel(product) {
+      const images = product.Images.ExtraImages;
+      const section = document.createElement(`div`);
     
     makeButton(){
         const button = document.createElement("button");
@@ -69,5 +79,24 @@ export class ProductDetails {
         
     }
     
+        // First Img
+        const firstImg = document.createElement(`div`);
+        firstImg.setAttribute("class", "product-card__carousel-image");
+        firstImg.innerHTML = `
+          <img src="${product.Images.PrimaryLarge}" alt="${product.Name}" data-src="${product.Images.PrimaryExtraLarge}">
+          `;
+        section.appendChild(firstImg);
+    
+        // Additional Images
+        images.forEach((item) => {
+          const imageDiv = document.createElement(`div`);
+          imageDiv.setAttribute("class", "product-card__carousel-image");
+          imageDiv.innerHTML = `
+          <img src="${item.Src}" alt="${item.Title}" data-src="${item.Src}">
+          `;
+          section.appendChild(imageDiv);
+        });
+        return section.innerHTML;
+      }
 }
 
