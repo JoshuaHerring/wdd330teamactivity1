@@ -54,6 +54,7 @@ export class ProductDetails {
         alt="Marmot Ajax tent"
         />
         
+        <p class="product-card__markup">$${this.product.SuggestedRetailPrice}</p>
         <p class="product-card__price">$${this.product.FinalPrice}</p>
         
         <p class="product__color">${this.product.Colors[0].ColorName}</p>
