@@ -73,17 +73,17 @@ export class ProductDetails {
       const images = product.Images.ExtraImages;
       const section = document.createElement(`div`);
     
-    makeButton(){
-        const button = document.createElement("button");
-        button.classList.add("addToCart"); 
+    // makeButton(){
+    //     const button = document.createElement("button");
+    //     button.classList.add("addToCart");
         
-    }
+    // }
     
         // First Img
         const firstImg = document.createElement(`div`);
         firstImg.setAttribute("class", "product-card__carousel-image");
         firstImg.innerHTML = `
-          <img src="${product.Images.PrimaryLarge}" alt="${product.Name}" data-src="${product.Images.PrimaryExtraLarge}">
+          <img src="" alt="" data-src="">
           `;
         section.appendChild(firstImg);
     
@@ -92,7 +92,7 @@ export class ProductDetails {
           const imageDiv = document.createElement(`div`);
           imageDiv.setAttribute("class", "product-card__carousel-image");
           imageDiv.innerHTML = `
-          <img src="${item.Src}" alt="${item.Title}" data-src="${item.Src}">
+          <img src="" alt="" data-src="">
           `;
           section.appendChild(imageDiv);
         });
