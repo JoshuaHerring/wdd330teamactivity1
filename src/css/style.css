@@ -244,3 +244,10 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.register {
+  /* border*/
+  border: 2px solid var(--tertiary-color);
+  padding: .5% .5%;
+  font-size: 18px;
+}
