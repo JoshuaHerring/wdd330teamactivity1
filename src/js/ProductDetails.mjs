@@ -9,25 +9,19 @@ export class ProductDetails {
     this.init();
   }
 
-  async init(breadcrumb = true) {
+  async init() {
     // console.log(this.dataSource);
     const product = await this.dataSource.findProductById(this.productId);
     this.product = product;
     console.log(this.product);
     const element = document.querySelector(".product-detail");
-    element.innerHTML = await this.renderProductDetails();
-
-    if (breadcrumb){
-      updateBreadCrumbs(
-        `
-        <a href="/product-listing">Home</a> / <a href="/product-listing/?category=${this.product.Category}">${this.product.Category}</a> / ${this.product.NameWithoutBrand}`
-      )
+    element.innerHTML = await this.renderProductDetails();         
 
     document
       .getElementById("addToCart")
       .addEventListener("click", this.addToCartHandler.bind(this));
     }
-  }
+  
 
   // add to cart button event handler
   async addToCartHandler(e) {

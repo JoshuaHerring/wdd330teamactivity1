@@ -29,8 +29,8 @@ export function setClick(selector, callback) {
 }
 
 export function updateBreadCrumbs(text){
-  document.querySelector(".breadcrumbs").innerHTML = text
-  console.log(text)
+  document.querySelector(".breadcrumbs").innerHTML = text;
+  console.log(text);
 }
 
 export function getParam(param) {

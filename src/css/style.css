@@ -244,3 +244,7 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.breadcrumbs{
+  width: 80%;
+}
