@@ -49,6 +49,7 @@ export default class ProductList {
     <h2 class="card__name">${product.Name}</h2>
     <p class="product-card__markup">$${product.SuggestedRetailPrice}</p>
     <h3 class="product-card__price">$${product.ListPrice}</h3></a>
+    <button class="q-view"${product.productId}> Quick View </button>
   </li>`;
   }
 }
