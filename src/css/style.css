@@ -123,6 +123,15 @@ button,
   padding: 10px;
 }
 
+.product-card p{
+  text-decoration:line-through;
+  color: red;
+}
+.product-card__markup {
+  text-decoration:line-through;
+  color: red;
+}
+
 .itemAdd {
   animation: scale 0.3s ease-in-out alternate;
   /* transform: scale(4); */

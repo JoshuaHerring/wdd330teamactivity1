@@ -38,6 +38,6 @@ export default class alert {
     });
 
     let body = document.querySelector("body");
-    body.prepend(holder);
+    // body.prepend(holder);
   }
 }

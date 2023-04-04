@@ -55,7 +55,7 @@ export class ProductDetails {
         />
         
         <p class="product-card__markup">$${this.product.SuggestedRetailPrice}</p>
-        <p class="product-card__price">$${this.product.FinalPrice}</p>
+        <h3 class="product-card__price">$${this.product.FinalPrice}</h3>
         
         <p class="product__color">${this.product.Colors[0].ColorName}</p>
         
