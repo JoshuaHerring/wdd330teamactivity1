@@ -57,8 +57,25 @@ export class ProductDetails {
         </div>`;
   }
 
+  renderColorSwitch(product) {
+    const colors = product.Colors;
+    const tempDiv = document.createElement(`div`);
+    const select = document.createElement(`select`);
+    colors.forEach((item) => {
+      const option = document.createElement(`option`);
+      option.setAttribute(`value`, item.ColorName);
+      option.innerHTML = `${item.ColorName}`;
+      select.appendChild(option);
+    });
+
+    tempDiv.appendChild(select);
+    return tempDiv.innerHTML;
+  }
+
+
   makeButton() {
     const button = document.createElement("button");
     button.classList.add("addToCart");
   }
 }
+
