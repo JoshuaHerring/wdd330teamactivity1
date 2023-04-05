@@ -251,3 +251,10 @@ footer {
   padding: .5% .5%;
   font-size: 18px;
 }
+
+/*discount added*/
+.product-card__markup {
+  color: red;
+  text-decoration: line-through;
+  display: inline;
+}
